@@ -1,12 +1,12 @@
 import { FC } from "react";
 import Home from "./components/pages/Home";
-import AppAppBar from "./components/pages/AppAppBar";
+import Header from "./components/pages/Header";
 import "./App.css";
 
 const App: FC = () => {
   return (
     <>
-      <AppAppBar />
+      <Header />
       <Home />
     </>
   );
