@@ -5,10 +5,13 @@ import topImage from "../../images/monkey.png";
 const useStyle = makeStyles((theme) => ({
   root: {
     textAlign: "center",
+    backgroundColor: "#98fb98",
+    height: "700px",
+    marginTop: "50px",
   },
   h3: {
     marginBottom: theme.spacing(4),
-    marginTop: theme.spacing(4),
+    paddingTop: theme.spacing(4),
   },
   h2: {
     marginBottom: theme.spacing(4),
@@ -25,7 +28,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Container className={classes.root}>
+      <Container id="home" className={classes.root}>
         <Typography variant="h3" className={classes.h3}>
           Masaru Terada
         </Typography>

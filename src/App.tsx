@@ -1,13 +1,15 @@
 import { FC } from "react";
-import Home from "./components/pages/Home";
-import Header from "./components/pages/Header";
 import "./App.css";
+import Header from "./components/pages/Header";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 
 const App: FC = () => {
   return (
     <>
       <Header />
       <Home />
+      <About />
     </>
   );
 };
