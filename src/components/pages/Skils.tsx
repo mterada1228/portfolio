@@ -8,11 +8,15 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-
 import ruby from "../../images/ruby.png";
 import php from "../../images/php.png";
 import js from "../../images/js.png";
 import ts from "../../images/ts.png";
+
+type Skill = {
+  name: string;
+  image: string;
+};
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -42,8 +46,32 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
+const languages = [
+  { name: "Ruby", image: ruby },
+  { name: "PHP", image: php },
+  { name: "JavaScript", image: js },
+  { name: "TypeScript", image: ts },
+];
+
 const Skils: FC = () => {
   const classes = useStyle();
+
+  const getSkillCard = (skill: Skill) => {
+    return (
+      <Grid item xs={3}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.cardMedia}
+            image={skill.image}
+            style={{ width: "130px", height: "130px" }}
+          />
+          <CardContent>
+            <Typography variant="h5">{skill.name}</Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    );
+  };
 
   return (
     <Container className={classes.root}>
@@ -54,54 +82,7 @@ const Skils: FC = () => {
         Languages
       </Typography>
       <Grid container spacing={4} className={classes.gridContainer}>
-        <Grid item xs={3}>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image={ruby}
-              style={{ width: "130px", height: "130px" }}
-            />
-            <CardContent>
-              <Typography variant="h5">Ruby</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image={php}
-              style={{ width: "130px", height: "130px" }}
-            />
-            <CardContent>
-              <Typography variant="h5">PHP</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image={js}
-              style={{ width: "130px", height: "130px" }}
-            />
-            <CardContent>
-              <Typography variant="h5">JavaScript</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image={ts}
-              style={{ width: "130px", height: "130px" }}
-            />
-            <CardContent>
-              <Typography variant="h5">TypeScript</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        {languages.map((language) => getSkillCard(language))}
       </Grid>
     </Container>
   );
