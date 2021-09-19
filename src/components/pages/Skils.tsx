@@ -74,16 +74,24 @@ const Skils: FC = () => {
   };
 
   return (
-    <Container className={classes.root}>
-      <Typography id="skils" variant="h3" className={classes.h3}>
-        Skils
-      </Typography>
-      <Typography variant="h4" className={classes.h4}>
-        Languages
-      </Typography>
-      <Grid container spacing={4} className={classes.gridContainer}>
-        {languages.map((language) => getSkillCard(language))}
-      </Grid>
+    <Container className={classes.root} maxWidth={false}>
+      <Container>
+        <Typography id="skils" variant="h3" className={classes.h3}>
+          Skils
+        </Typography>
+        <Typography variant="h4" className={classes.h4}>
+          Languages
+        </Typography>
+        <Grid container spacing={4} className={classes.gridContainer}>
+          {languages.map((language) => getSkillCard(language))}
+        </Grid>
+        <Typography variant="h4" className={classes.h4}>
+          FlameWork
+        </Typography>
+        <Grid container spacing={4} className={classes.gridContainer}>
+          {languages.map((language) => getSkillCard(language))}
+        </Grid>
+      </Container>
     </Container>
   );
 };

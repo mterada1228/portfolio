@@ -17,7 +17,7 @@ const About: FC = () => {
 
   return (
     <>
-      <Container className={classes.root}>
+      <Container className={classes.root} maxWidth={false}>
         <Typography id="about" variant="h3" className={classes.h3}>
           About
         </Typography>
