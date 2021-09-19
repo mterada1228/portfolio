@@ -19,6 +19,7 @@ const Header: FC = () => {
     0: "home",
     1: "about",
     2: "skils",
+    3: "history",
   };
 
   const handleChange = (e: any, newSelectedTab: number) => {
@@ -39,6 +40,7 @@ const Header: FC = () => {
             <Tab label="HOME" />
             <Tab label="ABOUT" />
             <Tab label="SKILS" />
+            <Tab label="HISTORY" />
           </Tabs>
         </Toolbar>
       </AppBar>
