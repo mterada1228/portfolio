@@ -28,7 +28,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Container id="home" className={classes.root}>
+      <Container id="home" className={classes.root} maxWidth={false}>
         <Typography variant="h3" className={classes.h3}>
           Masaru Terada
         </Typography>
