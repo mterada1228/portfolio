@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import HistoryLeft from "../modules/HistoryLeft";
 import HistoryRight from "../modules/HistoryRight";
+import crubpalsur from "../../images/crabPalsur.jpg";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -24,8 +25,10 @@ const Histories: FC = () => {
           <Typography id="history" variant="h3" className={classes.h3}>
             History
           </Typography>
-          <HistoryLeft />
-          <HistoryRight />
+          <HistoryLeft image={crubpalsur} date="2016年3月" text="首都大" />
+          <HistoryRight image={crubpalsur} date="2016年3月" text="首都大" />
+          <HistoryLeft image={crubpalsur} date="2016年3月" text="首都大" />
+          <HistoryRight image={crubpalsur} date="2016年3月" text="首都大" />
         </Container>
       </Container>
     </>

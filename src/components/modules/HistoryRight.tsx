@@ -2,10 +2,17 @@ import { FC } from "react";
 import {
   Card,
   CardContent,
+  CardMedia,
   Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
+
+type Props = {
+  image: string;
+  date: string;
+  text: string;
+};
 
 const useStyle = makeStyles((theme) => ({
   grid_with_border_rigth: {
@@ -21,12 +28,21 @@ const useStyle = makeStyles((theme) => ({
   },
   card: {
     backgroundColor: theme.palette.grey[100],
+    display: "flex",
     paddingTop: "20px",
     paddingBottom: "20px",
   },
+  card_media: {
+    marginLeft: 15,
+    height: 151,
+    width: 151,
+  },
+  card_content: {
+    textAlign: "left",
+  },
 }));
 
-const HistoryRight: FC = () => {
+const HistoryRight: FC<Props> = ({ image, date, text }) => {
   const classes = useStyle();
 
   return (
@@ -36,8 +52,14 @@ const HistoryRight: FC = () => {
       <Grid item xs={1}></Grid>
       <Grid item xs={5}>
         <Card className={classes.card}>
-          <CardContent>
-            <Typography variant="h5">fuga</Typography>
+          <CardMedia
+            image={image}
+            title="crab palsur"
+            className={classes.card_media}
+          />
+          <CardContent className={classes.card_content}>
+            <Typography variant="h5">{date}</Typography>
+            <Typography variant="h6">{text}</Typography>
           </CardContent>
         </Card>
       </Grid>
