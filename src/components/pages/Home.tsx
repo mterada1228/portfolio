@@ -1,27 +1,30 @@
 import { FC } from "react";
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import { Container, Typography, Theme } from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
 import topImage from "../../images/monkey.png";
 
-const useStyle = makeStyles((theme) => ({
-  root: {
-    textAlign: "center",
-    backgroundColor: "#98fb98",
-    height: "700px",
-    marginTop: "50px",
-  },
-  h3: {
-    marginBottom: theme.spacing(4),
-    paddingTop: theme.spacing(4),
-  },
-  h2: {
-    marginBottom: theme.spacing(4),
-    marginTop: theme.spacing(4),
-  },
-  topImage: {
-    width: "300px",
-    height: "300px",
-  },
-}));
+const useStyle = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      textAlign: "center",
+      backgroundColor: "#98fb98",
+      height: "700px",
+      marginTop: "50px",
+    },
+    h3: {
+      marginBottom: theme.spacing(4),
+      paddingTop: theme.spacing(4),
+    },
+    h2: {
+      marginBottom: theme.spacing(4),
+      marginTop: theme.spacing(4),
+    },
+    topImage: {
+      width: "300px",
+      height: "300px",
+    },
+  })
+);
 
 const Home: FC = () => {
   const classes = useStyle();

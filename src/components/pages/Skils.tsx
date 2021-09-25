@@ -5,9 +5,10 @@ import {
   CardMedia,
   Container,
   Grid,
-  makeStyles,
+  Theme,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
 import ruby from "../../images/ruby.png";
 import php from "../../images/php.png";
 import js from "../../images/js.png";
@@ -18,33 +19,35 @@ type Skill = {
   image: string;
 };
 
-const useStyle = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.common.white,
-    textAlign: "center",
-  },
-  h3: {
-    marginbottom: theme.spacing(4),
-    paddingTop: theme.spacing(4),
-  },
-  h4: {
-    marginbottom: theme.spacing(4),
-    paddingTop: theme.spacing(4),
-  },
-  gridContainer: {
-    marginTop: theme.spacing(4),
-  },
-  card: {
-    backgroundColor: theme.palette.grey[100],
-    paddingTop: "20px",
-    paddingBottom: "20px",
-  },
-  cardMedia: {
-    backgroundColor: theme.palette.common.white,
-    margin: "auto",
-    borderRadius: "50%",
-  },
-}));
+const useStyle = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      backgroundColor: theme.palette.common.white,
+      textAlign: "center",
+    },
+    h3: {
+      marginbottom: theme.spacing(4),
+      paddingTop: theme.spacing(4),
+    },
+    h4: {
+      marginbottom: theme.spacing(4),
+      paddingTop: theme.spacing(4),
+    },
+    gridContainer: {
+      marginTop: theme.spacing(4),
+    },
+    card: {
+      backgroundColor: theme.palette.grey[100],
+      paddingTop: "20px",
+      paddingBottom: "20px",
+    },
+    cardMedia: {
+      backgroundColor: theme.palette.common.white,
+      margin: "auto",
+      borderRadius: "50%",
+    },
+  })
+);
 
 const languages = [
   { name: "Ruby", image: ruby },

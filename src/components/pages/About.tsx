@@ -1,16 +1,19 @@
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import { Container, Theme, Typography } from "@mui/material";
 import { FC } from "react";
+import { createStyles, makeStyles } from "@mui/styles";
 
-const useStyle = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.common.white,
-    textAlign: "center",
-  },
-  h3: {
-    marginBottom: theme.spacing(4),
-    paddingTop: theme.spacing(4),
-  },
-}));
+const useStyle = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      backgroundColor: theme.palette.common.white,
+      textAlign: "center",
+    },
+    h3: {
+      marginBottom: theme.spacing(4),
+      paddingTop: theme.spacing(4),
+    },
+  })
+);
 
 const About: FC = () => {
   const classes = useStyle();

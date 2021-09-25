@@ -4,9 +4,10 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  makeStyles,
+  Theme,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
 
 type Props = {
   image: string;
@@ -14,33 +15,35 @@ type Props = {
   text: string;
 };
 
-const useStyle = makeStyles((theme) => ({
-  grid_with_border_rigth: {
-    position: "relative",
-    "&::after": {
-      content: '""',
-      width: "4px",
-      height: "100%",
-      position: "absolute",
-      backgroundColor: "red",
-      left: "100%",
+const useStyle = makeStyles((theme: Theme) =>
+  createStyles({
+    grid_with_border_rigth: {
+      position: "relative",
+      "&::after": {
+        content: '""',
+        width: "4px",
+        height: "100%",
+        position: "absolute",
+        backgroundColor: "red",
+        left: "100%",
+      },
     },
-  },
-  card: {
-    backgroundColor: theme.palette.grey[100],
-    display: "flex",
-    paddingTop: "20px",
-    paddingBottom: "20px",
-  },
-  card_media: {
-    marginLeft: 15,
-    height: 151,
-    width: 151,
-  },
-  card_content: {
-    textAlign: "left",
-  },
-}));
+    card: {
+      backgroundColor: theme.palette.grey[100],
+      display: "flex",
+      paddingTop: "20px",
+      paddingBottom: "20px",
+    },
+    card_media: {
+      marginLeft: 15,
+      height: 151,
+      width: 151,
+    },
+    card_content: {
+      textAlign: "left",
+    },
+  })
+);
 
 const HistoryRight: FC<Props> = ({ image, date, text }) => {
   const classes = useStyle();

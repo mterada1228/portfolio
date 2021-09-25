@@ -1,11 +1,14 @@
 import { FC, useState } from "react";
-import { AppBar, makeStyles, Tabs, Tab, Toolbar } from "@material-ui/core";
+import { AppBar, Tabs, Tab, Toolbar } from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
 
-const useStyle = makeStyles({
-  tabs: {
-    flexGrow: 1,
-  },
-});
+const useStyle = makeStyles(() =>
+  createStyles({
+    tabs: {
+      flexGrow: 1,
+    },
+  })
+);
 
 type IndexToTabName = {
   [key: number]: string;
