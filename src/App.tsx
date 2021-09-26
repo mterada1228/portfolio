@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Skils from "./components/pages/Skils";
 import Histories from "./components/pages/Histories";
 import Contact from "./components/pages/Contact";
+import Footer from "./components/pages/Footer";
 
 const App: FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: FC = () => {
       <Skils />
       <Histories />
       <Contact />
+      <Footer />
     </>
   );
 };

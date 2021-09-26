@@ -8,6 +8,9 @@ const Theme = createTheme({
     primary: {
       main: "rgba(34, 221, 84, 0.09)",
     },
+    secondary: {
+      main: "#7021DE",
+    },
   },
   typography: {
     fontFamily: ['"Open Sans"', '"Kosugi Maru"'].join(","),
