@@ -4,19 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-declare module "@mui/material/styles" {
-  interface Theme {}
-  interface ThemeOptions {}
-}
-
-const theme = createTheme();
+import { ThemeProvider } from "@mui/material/styles";
+import Theme from "./components/modules/Theme";
 
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={Theme}>
         <App />
       </ThemeProvider>
     </CssBaseline>
