@@ -12,8 +12,18 @@ const Theme = createTheme({
       main: "#7021DE",
     },
   },
+  mixins: {
+    toolbar: {
+      minHeight: 73,
+    },
+  },
   typography: {
     fontFamily: ['"Open Sans"', '"Kosugi Maru"'].join(","),
+    h1: {
+      fontFamily: "Open Sans",
+      fontSize: "50px",
+      fontWeight: 1200,
+    },
     h2: {
       fontFamily: "Open Sans",
       fontSize: "36px",

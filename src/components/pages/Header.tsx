@@ -1,9 +1,12 @@
 import { FC, useState } from "react";
-import { AppBar, Tabs, Tab, Toolbar } from "@mui/material";
+import { AppBar, Tabs, Tab, Theme, Toolbar } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 
-const useStyle = makeStyles(() =>
+const useStyle = makeStyles((theme: Theme) =>
   createStyles({
+    appbar: {
+      height: 73,
+    },
     tabs: {
       flexGrow: 1,
     },
@@ -32,7 +35,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="secondary" className={classes.appbar}>
         <Toolbar>
           <Tabs
             value={selectedTab}
