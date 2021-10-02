@@ -10,10 +10,11 @@ const useStyle = makeStyles((theme: Theme) =>
     root: {
       backgroundColor: theme.palette.primary.main,
       textAlign: "center",
+      height: 518,
     },
     h2: {
       color: theme.palette.text.primary,
-      paddingTop: 50,
+      paddingTop: 130,
       paddingBottom: 50,
     },
     h3: {
