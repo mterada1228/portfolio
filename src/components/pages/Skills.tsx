@@ -54,7 +54,7 @@ const Skills: FC = () => {
     <>
       <Container className={classes.root} maxWidth={false}>
         <Container className={classes.title}>
-          <Typography id="about" variant="h2" className={classes.h2}>
+          <Typography id="skills" variant="h2" className={classes.h2}>
             SKILLS
           </Typography>
         </Container>

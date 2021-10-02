@@ -57,10 +57,10 @@ const Contact: FC = () => {
   return (
     <>
       <Container className={classes.root} maxWidth={false}>
-        <Typography id="about" variant="h2" className={classes.h2}>
+        <Typography id="contact" variant="h2" className={classes.h2}>
           CONTACT
         </Typography>
-        <Typography id="about" variant="h3" className={classes.h3}>
+        <Typography variant="h3" className={classes.h3}>
           Please feel free to contact me
         </Typography>
         <Box

@@ -24,8 +24,8 @@ const Header: FC = () => {
   const indexToTabName: IndexToTabName = {
     0: "home",
     1: "about",
-    2: "skils",
-    3: "history",
+    2: "skills",
+    3: "contact",
   };
 
   const handleChange = (e: any, newSelectedTab: number) => {
@@ -41,12 +41,43 @@ const Header: FC = () => {
             value={selectedTab}
             className={classes.tabs}
             onChange={handleChange}
+            TabIndicatorProps={{
+              style: { background: "#DE218F" },
+            }}
+            textColor="inherit"
             centered
           >
-            <Tab label="HOME" />
-            <Tab label="ABOUT" />
-            <Tab label="SKILS" />
-            <Tab label="HISTORY" />
+            <Tab
+              sx={{
+                color: "white",
+                fontSize: 36,
+                fontWeight: 1000,
+                marginRight: 20,
+              }}
+              label="HOME"
+            />
+            <Tab
+              sx={{
+                color: "white",
+                fontSize: 36,
+                fontWeight: 1000,
+                marginRight: 20,
+              }}
+              label="ABOUT"
+            />
+            <Tab
+              sx={{
+                color: "white",
+                fontSize: 36,
+                fontWeight: 1000,
+                marginRight: 20,
+              }}
+              label="SKILLS"
+            />
+            <Tab
+              sx={{ color: "white", fontSize: 36, fontWeight: 1000 }}
+              label="CONTACT"
+            />
           </Tabs>
         </Toolbar>
       </AppBar>
