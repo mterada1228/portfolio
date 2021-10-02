@@ -27,6 +27,9 @@ const useStyle = makeStyles((theme: Theme) =>
     h2: {
       color: theme.palette.text.primary,
     },
+    h4: {
+      fontFamily: "Kosugi Maru",
+    },
   })
 );
 

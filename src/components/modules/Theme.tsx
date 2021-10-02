@@ -34,8 +34,11 @@ const Theme = createTheme({
       fontSize: "30px",
     },
     h4: {
-      fontFamily: "Kosugi Maru",
       fontSize: "25px",
+    },
+    h5: {
+      fontFamily: "Open Sans",
+      fontSize: "20px",
     },
   },
 });
