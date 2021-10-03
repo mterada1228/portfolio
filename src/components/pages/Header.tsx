@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { scroller } from "react-scroll";
 import { AppBar, Tabs, Tab, Theme, Toolbar } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
@@ -38,6 +38,31 @@ const Header: FC = () => {
     });
     setSelectedTab(newSelectedTab);
   };
+
+  useEffect(() => {
+    const scrollAction = () => {
+      if (2000 < window.scrollY) {
+        setSelectedTab(3);
+      } else if (1198 < window.scrollY) {
+        setSelectedTab(2);
+      } else if (576 < window.scrollY) {
+        setSelectedTab(1);
+      } else {
+        setSelectedTab(0);
+      }
+    };
+
+    window.addEventListener("scroll", scrollAction, {
+      capture: false,
+      passive: true,
+    });
+
+    scrollAction();
+
+    return () => {
+      window.removeEventListener("scroll", scrollAction);
+    };
+  }, []);
 
   return (
     <>
