@@ -56,8 +56,8 @@ const Contact: FC = () => {
 
   return (
     <>
-      <Container className={classes.root} maxWidth={false}>
-        <Typography id="contact" variant="h2" className={classes.h2}>
+      <Container id="contact" className={classes.root} maxWidth={false}>
+        <Typography variant="h2" className={classes.h2}>
           CONTACT
         </Typography>
         <Typography variant="h3" className={classes.h3}>

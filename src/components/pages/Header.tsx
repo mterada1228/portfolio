@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { scroller } from "react-scroll";
 import { AppBar, Tabs, Tab, Theme, Toolbar } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
 
@@ -29,7 +30,12 @@ const Header: FC = () => {
   };
 
   const handleChange = (e: any, newSelectedTab: number) => {
-    window.location.href = `#${indexToTabName[newSelectedTab]}`;
+    scroller.scrollTo(`${indexToTabName[newSelectedTab]}`, {
+      duration: 700,
+      delay: 0,
+      offset: -60,
+      smooth: "easeInOutQuart",
+    });
     setSelectedTab(newSelectedTab);
   };
 

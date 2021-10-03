@@ -10,7 +10,7 @@ const useStyle = makeStyles((theme: Theme) =>
       textAlign: "center",
     },
     title: {
-      marginTop: 50,
+      paddingTop: 50,
       marginBottom: 50,
       display: "flex",
     },
@@ -38,9 +38,9 @@ const About: FC = () => {
 
   return (
     <>
-      <Container className={classes.root} maxWidth={false}>
+      <Container id="about" className={classes.root} maxWidth={false}>
         <Container className={classes.title}>
-          <Typography id="about" variant="h2" className={classes.h2}>
+          <Typography variant="h2" className={classes.h2}>
             ABOUT
           </Typography>
         </Container>

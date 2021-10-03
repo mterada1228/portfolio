@@ -52,9 +52,9 @@ const Skills: FC = () => {
 
   return (
     <>
-      <Container className={classes.root} maxWidth={false}>
+      <Container id="skills" className={classes.root} maxWidth={false}>
         <Container className={classes.title}>
-          <Typography id="skills" variant="h2" className={classes.h2}>
+          <Typography variant="h2" className={classes.h2}>
             SKILLS
           </Typography>
         </Container>
