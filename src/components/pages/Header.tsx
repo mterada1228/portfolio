@@ -1,15 +1,13 @@
 import { FC, useState, useEffect } from "react";
 import { scroller } from "react-scroll";
-import { AppBar, Tabs, Tab, Theme, Toolbar } from "@mui/material";
+import { AppBar, Box, Tabs, Tab, Toolbar } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
+import useSize from "../hooks/useSize";
 
-const useStyle = makeStyles((theme: Theme) =>
+const useStyle = makeStyles(() =>
   createStyles({
-    appbar: {
-      height: 73,
-    },
     tabs: {
-      flexGrow: 1,
+      width: "100%",
     },
   })
 );
@@ -21,6 +19,7 @@ type IndexToTabName = {
 const Header: FC = () => {
   const classes = useStyle();
   const [selectedTab, setSelectedTab] = useState(0);
+  const { isMobileSize } = useSize();
 
   const indexToTabName: IndexToTabName = {
     0: "home",
@@ -65,54 +64,63 @@ const Header: FC = () => {
   }, []);
 
   return (
-    <>
-      <AppBar position="fixed" color="secondary" className={classes.appbar}>
-        <Toolbar>
-          <Tabs
-            value={selectedTab}
-            className={classes.tabs}
-            onChange={handleChange}
-            TabIndicatorProps={{
-              style: { background: "#DE218F" },
-            }}
-            textColor="inherit"
-            centered
-          >
-            <Tab
-              sx={{
-                color: "white",
-                fontSize: 36,
-                fontWeight: 1000,
-                marginRight: 20,
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" elevation={0} color="secondary">
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          {isMobileSize ? (
+            ""
+          ) : (
+            <Tabs
+              value={selectedTab}
+              className={classes.tabs}
+              onChange={handleChange}
+              TabIndicatorProps={{
+                style: { background: "#DE218F" },
               }}
-              label="HOME"
-            />
-            <Tab
-              sx={{
-                color: "white",
-                fontSize: 36,
-                fontWeight: 1000,
-                marginRight: 20,
-              }}
-              label="ABOUT"
-            />
-            <Tab
-              sx={{
-                color: "white",
-                fontSize: 36,
-                fontWeight: 1000,
-                marginRight: 20,
-              }}
-              label="SKILLS"
-            />
-            <Tab
-              sx={{ color: "white", fontSize: 36, fontWeight: 1000 }}
-              label="CONTACT"
-            />
-          </Tabs>
+              textColor="inherit"
+              centered
+            >
+              <Tab
+                sx={{
+                  color: "white",
+                  fontSize: 25,
+                  fontWeight: 1000,
+                  width: "15%",
+                }}
+                label="HOME"
+              />
+              <Tab
+                sx={{
+                  color: "white",
+                  fontSize: 25,
+                  fontWeight: 1000,
+                  width: "15%",
+                }}
+                label="ABOUT"
+              />
+              <Tab
+                sx={{
+                  color: "white",
+                  fontSize: 25,
+                  fontWeight: 1000,
+                  width: "15%",
+                }}
+                label="SKILLS"
+              />
+              <Tab
+                sx={{
+                  color: "white",
+                  fontSize: 25,
+                  fontWeight: 1000,
+                  width: "15%",
+                }}
+                label="CONTACT"
+              />
+            </Tabs>
+          )}
         </Toolbar>
       </AppBar>
-    </>
+    </Box>
   );
 };
 

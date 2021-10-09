@@ -43,7 +43,7 @@ const Home: FC = () => {
             <img src={topImage} alt="monkey" className={classes.topImage} />
           </Grid>
           <Grid item xs={6}>
-            <Box
+            {/* <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -60,7 +60,7 @@ const Home: FC = () => {
               <Typography variant="h2" className={classes.h2}>
                 Web Application Developer
               </Typography>
-            </Box>
+            </Box> */}
           </Grid>
         </Grid>
       </Container>
