@@ -1,5 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 900,
+    lg: 1500,
+    xl: 2000,
+  },
+};
+
 const Theme = createTheme({
   palette: {
     text: {
@@ -21,13 +31,19 @@ const Theme = createTheme({
     fontFamily: ['"Open Sans"', '"Kosugi Maru"'].join(","),
     h1: {
       fontFamily: "Open Sans",
-      fontSize: "50px",
-      fontWeight: 1200,
+      fontSize: "3rem",
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: "2rem",
+      },
+      fontWeight: 700,
     },
     h2: {
       fontFamily: "Open Sans",
-      fontSize: "36px",
-      fontWeight: 1200,
+      fontSize: "1.8rem",
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: "1.2rem",
+      },
+      fontWeight: 700,
     },
     h3: {
       fontFamily: "Open Sans",
