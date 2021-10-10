@@ -50,11 +50,13 @@ const Theme = createTheme({
       fontSize: "30px",
     },
     h4: {
-      fontSize: "25px",
+      fontSize: "1.5rem",
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: "1rem",
+      },
     },
     h5: {
-      fontFamily: "Open Sans",
-      fontSize: "20px",
+      fontSize: "1rem",
     },
   },
 });
