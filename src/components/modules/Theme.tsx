@@ -46,8 +46,10 @@ const Theme = createTheme({
       fontWeight: 700,
     },
     h3: {
-      fontFamily: "Open Sans",
-      fontSize: "30px",
+      fontSize: "1.6rem",
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: "1.1rem",
+      },
     },
     h4: {
       fontSize: "1.5rem",
@@ -57,6 +59,9 @@ const Theme = createTheme({
     },
     h5: {
       fontSize: "1rem",
+      [`@media screen and (max-width: ${breakpoints.values.sm}px)`]: {
+        fontSize: "0.8rem",
+      },
     },
   },
 });
