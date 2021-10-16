@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { scroller } from "react-scroll";
 import { AppBar, Box, Tabs, Tab, Toolbar } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
@@ -38,38 +38,15 @@ const Header: FC = () => {
     setSelectedTab(newSelectedTab);
   };
 
-  useEffect(() => {
-    const scrollAction = () => {
-      if (2000 < window.scrollY) {
-        setSelectedTab(3);
-      } else if (1198 < window.scrollY) {
-        setSelectedTab(2);
-      } else if (576 < window.scrollY) {
-        setSelectedTab(1);
-      } else {
-        setSelectedTab(0);
-      }
-    };
-
-    window.addEventListener("scroll", scrollAction, {
-      capture: false,
-      passive: true,
-    });
-
-    scrollAction();
-
-    return () => {
-      window.removeEventListener("scroll", scrollAction);
-    };
-  }, []);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" elevation={0} color="secondary">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          {isMobileSize ? (
-            ""
-          ) : (
+      {isMobileSize ? (
+        <AppBar position="relative" color="secondary">
+          <Toolbar sx={{ justifyContent: "space-between" }}></Toolbar>
+        </AppBar>
+      ) : (
+        <AppBar color="secondary">
+          <Toolbar sx={{ justifyContent: "space-between" }}>
             <Tabs
               value={selectedTab}
               className={classes.tabs}
@@ -117,9 +94,9 @@ const Header: FC = () => {
                 label="CONTACT"
               />
             </Tabs>
-          )}
-        </Toolbar>
-      </AppBar>
+          </Toolbar>
+        </AppBar>
+      )}
     </Box>
   );
 };

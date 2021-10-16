@@ -8,7 +8,9 @@ const useStyle = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.primary.main,
-      marginTop: theme.mixins.toolbar.minHeight,
+      [theme.breakpoints.up("md")]: {
+        marginTop: theme.mixins.toolbar.minHeight,
+      },
       paddingTop: "5%",
       paddingBottom: "5%",
       height: "25%",
