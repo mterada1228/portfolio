@@ -12,6 +12,10 @@ const useStyle = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       textAlign: "center",
       height: "25%",
+      paddingBottom: "5%",
+      [theme.breakpoints.down("md")]: {
+        paddingBottom: "20%",
+      },
     },
     title: {
       paddingTop: "5%",
