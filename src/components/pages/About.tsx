@@ -46,6 +46,9 @@ const useStyle = makeStyles((theme: Theme) =>
     h4: {
       color: theme.palette.text.primary,
       paddingTop: "3%",
+      [theme.breakpoints.up("md")]: {
+        paddingBottom: "10%",
+      },
     },
   })
 );
