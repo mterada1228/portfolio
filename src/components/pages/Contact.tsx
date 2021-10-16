@@ -8,18 +8,25 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 const useStyle = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "white",
       textAlign: "center",
-      height: 518,
+      height: "25%",
+    },
+    h1: {
+      color: theme.palette.text.primary,
+      paddingTop: "5%",
+      paddingBottom: "5%",
+      [theme.breakpoints.down("md")]: {
+        paddingTop: "20%",
+        paddingBottom: "20%",
+      },
     },
     h2: {
       color: theme.palette.text.primary,
-      paddingTop: 130,
-      paddingBottom: 50,
-    },
-    h3: {
-      color: theme.palette.text.primary,
-      paddingBottom: 50,
+      paddingBottom: "5%",
+      [theme.breakpoints.down("md")]: {
+        paddingBottom: "20%",
+      },
     },
     icon: {
       color: theme.palette.text.primary,
@@ -57,11 +64,11 @@ const Contact: FC = () => {
   return (
     <>
       <Container id="contact" className={classes.root} maxWidth={false}>
-        <Typography variant="h2" className={classes.h2}>
+        <Typography variant="h1" className={classes.h1}>
           CONTACT
         </Typography>
-        <Typography variant="h3" className={classes.h3}>
-          Please feel free to contact me
+        <Typography variant="h2" className={classes.h2}>
+          Please feel free to contact me!
         </Typography>
         <Box
           sx={{
