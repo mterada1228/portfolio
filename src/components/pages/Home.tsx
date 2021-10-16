@@ -25,6 +25,12 @@ const useStyle = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      position: "relative",
+      "&::before": {
+        display: "block",
+        content: "",
+        paddingTop: "100%",
+      },
     },
     textConteiner: {
       display: "flex",
@@ -33,8 +39,11 @@ const useStyle = makeStyles((theme: Theme) =>
       marginTop: "20%",
     },
     topImage: {
-      width: "50vmin",
-      height: "50vmin",
+      position: "absolute",
+      top: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "contain",
     },
     h1: {
       paddingTop: "10%",
@@ -65,7 +74,29 @@ const Home: FC = () => {
         {isMobileSize ? (
           <Container className={classes.contentContainer}>
             <Container className={classes.imageContainer}>
-              <img src={topImage} alt="monkey" className={classes.topImage} />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "50%",
+                    paddingTop: "50%",
+                    position: "relative",
+                  }}
+                >
+                  <img
+                    src={topImage}
+                    alt="monkey"
+                    className={classes.topImage}
+                  />
+                </Box>
+              </Box>
             </Container>
             <Container className={classes.textConteiner}>
               <Typography variant="h1" className={classes.h1}>
