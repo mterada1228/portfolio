@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme: Theme) =>
     },
     heading: {
       paddingTop: "5%",
-      paddingBottom: "5%",
+      paddingBottom: "1%",
     },
     h1: {
       color: "#DE218F",
